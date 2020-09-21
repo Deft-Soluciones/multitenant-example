@@ -30,7 +30,7 @@ TEMPLATES_DIR = os.path.join(DJANGO_DIR, "templates")
 
 ALLOWED_HOSTS = []
 
-POSTGRES_HOST = "127.0.0.1"
+POSTGRES_HOST = "postgres"
 POSTGRES_PORT = 5432
 POSTGRES_DB = "gbici"
 POSTGRES_USER = "gbici"
@@ -55,10 +55,12 @@ SHARED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.admin',
+    'django.contrib.staticfiles',
 )
 
 TENANT_APPS = (
     'django.contrib.contenttypes',
+    'django.contrib.staticfiles',
 
     # your tenant-specific apps
 )
@@ -73,6 +75,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.admin',
+    'django.contrib.staticfiles',
 )
 
 MIDDLEWARE = [
@@ -165,3 +168,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+# STATICFILES_FINDERS = [
+#     "django.contrib.staticfiles.finders.FileSystemFinder",
+#     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+#     "compressor.finders.CompressorFinder",
+# ]
+#
+# MULTITENANT_STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, "tenants/%s/static"),
+# ]
